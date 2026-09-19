@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2b1710"><meta name="description" content="Cardápio online Du Chef Esfiharia">
+<title>Du Chef Esfiharia</title>
+<style>
+:root{--bg:#f7f1e8;--card:#fffdf9;--brown:#2b1710;--brown2:#4a281b;--gold:#c99745;--gold2:#e8c27a;--text:#251711;--muted:#76685f;--line:#eadfd2;--green:#25a65a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{max-width:680px;margin:auto;min-height:100vh;padding-bottom:105px}header{padding:25px 18px 24px;background:linear-gradient(145deg,var(--brown),#452519);color:#fff;border-radius:0 0 28px 28px;box-shadow:0 10px 35px #2b171025}.brand{display:flex;gap:12px;align-items:center}.logo{height:48px;width:48px;border-radius:15px;border:1px solid #e8c27a66;display:grid;place-items:center;color:var(--gold2);font-weight:900}.brand h1{font-size:21px;margin:0}.brand p{font-size:12px;color:#eaded6;margin:3px 0 0}.hero{margin-top:22px}.hero h2{font-size:29px;line-height:1.05;margin:0 0 7px}.hero p{font-size:14px;color:#eaded6;margin:0}.section{padding:21px 15px 0}.title{display:flex;justify-content:space-between;align-items:end;margin-bottom:11px}.title h3{margin:0;font-size:18px}.title span{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 5px 20px #3b24150a}.emoji{font-size:28px}.card h4{font-size:16px;margin:7px 0 4px}.desc{font-size:12px;line-height:1.35;color:var(--muted);min-height:33px}.price{font-size:17px;font-weight:850;margin-top:9px}.add{width:100%;border:0;border-radius:12px;background:var(--brown);color:#fff;font-weight:800;padding:11px;margin-top:10px}.qty{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.qty button{height:34px;width:34px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:18px}.form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}.field{margin-bottom:13px}.field:last-child{margin-bottom:0}.field label{font-size:12px;font-weight:800;display:block;margin-bottom:6px}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;outline:0;color:var(--text)}textarea{min-height:76px;resize:vertical}.payments{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pay{border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px 5px;font-size:12px}.pay.active{border-color:var(--gold);background:#fff8eb;box-shadow:0 0 0 2px #c9974522}.hidden{display:none}.summary{margin:18px 15px;background:var(--brown);color:#fff;padding:18px;border-radius:20px}.summary h3{margin:0 0 11px}.row{display:flex;justify-content:space-between;gap:12px;margin:8px 0;font-size:13px}.total{border-top:1px solid #ffffff26;padding-top:12px;margin-top:12px;font-size:18px;font-weight:900}.send{width:100%;border:0;background:var(--gold);color:var(--brown);padding:15px;border-radius:14px;font-weight:900;margin-top:12px}.notice{margin:14px 15px 0;background:#fff8e9;border:1px solid #efd7a7;border-radius:14px;padding:12px;font-size:12px;color:#684c2e}.bar{position:fixed;bottom:13px;left:50%;transform:translateX(-50%);width:min(650px,calc(100% - 24px));background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:0 10px 35px #0002;display:flex;align-items:center;justify-content:space-between;z-index:5}.bar strong{display:block;font-size:16px}.bar small{color:var(--muted)}.finish{background:var(--brown);color:#fff;border:0;padding:13px 17px;border-radius:13px;font-weight:800}@media(max-width:430px){.grid{grid-template-columns:1fr}.payments{grid-template-columns:1fr 1fr}.pay:last-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">DC</div><div><h1>Du Chef Esfiharia</h1><p>Esfihas artesanais • Delivery</p></div></div><div class="hero"><h2>Monte seu pedido 🥟</h2><p>Escolha seus sabores, informe a entrega e envie tudo pronto pelo WhatsApp.</p></div></header>
+<div class="notice">🛵 Pedido online • Pagamento e endereço informados no checkout • Confirmação pelo WhatsApp</div>
+<section class="section"><div class="title"><h3>Esfihas</h3><span>Escolha seus sabores</span></div><div id="products" class="grid"></div></section>
+<section class="section"><div class="title"><h3>Combos</h3><span>Para compartilhar</span></div><div id="combos" class="grid"></div></section>
+<section class="section"><div class="title"><h3>Bebidas & extras</h3><span>Opcional</span></div><div id="extras" class="grid"></div></section>
+<section class="section" id="checkout"><div class="title"><h3>Finalizar pedido</h3><span>Seus dados</span></div><div class="form">
+<div class="field"><label>Nome</label><input id="name" placeholder="Seu nome"></div>
+<div class="field"><label>WhatsApp</label><input id="phone" inputmode="tel" placeholder="(00) 00000-0000"></div>
+<div class="field"><label>Endereço de entrega</label><input id="address" placeholder="Rua, número, bairro"></div>
+<div class="field"><label>Complemento / referência</label><input id="reference" placeholder="Apartamento, ponto de referência..."></div>
+<div class="field"><label>Forma de pagamento</label><div class="payments"><button class="pay active" data-pay="Pix">💚 Pix</button><button class="pay" data-pay="Dinheiro">💵 Dinheiro</button><button class="pay" data-pay="Cartão">💳 Cartão</button></div></div>
+<div class="field hidden" id="changeBox"><label>Troco para quanto?</label><input id="change" inputmode="decimal" placeholder="Ex.: 50,00"></div>
+<div class="field"><label>Observação</label><textarea id="notes" placeholder="Ex.: sem cebola, tocar interfone..."></textarea></div>
+</div></section>
+<div class="summary"><h3>Resumo</h3><div id="summaryItems"></div><div class="row"><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div><div class="row"><span>Entrega</span><strong>A confirmar</strong></div><div class="row total"><span>Total dos produtos</span><strong id="total">R$ 0,00</strong></div><button class="send" onclick="sendOrder()">Enviar pedido pelo WhatsApp →</button></div>
+<div class="bar"><div><small id="count">0 itens</small><strong id="barTotal">R$ 0,00</strong></div><button class="finish" onclick="document.getElementById('checkout').scrollIntoView({behavior:'smooth'})">Finalizar</button></div>
+</div>
+<script>
+// COLOQUE AQUI O WHATSAPP REAL DA DU CHEF ESFIHARIA, somente números.
+// Exemplo: 5581999999999
+const WHATSAPP_NUMBER="5581999999999";
+const products=[
+{id:"carne",name:"Esfiha de Carne",emoji:"🥩",desc:"Carne temperada, cebola e tomate.",price:3.49},
+{id:"frango",name:"Esfiha de Frango",emoji:"🍗",desc:"Frango desfiado bem temperado.",price:3.49},
+{id:"queijo",name:"Esfiha de Queijo",emoji:"🧀",desc:"Muçarela e orégano.",price:3.49}
+];
+const combos=[
+{id:"combo6",name:"Combo 6",emoji:"🥟",desc:"6 esfihas à sua escolha.",price:18.90},
+{id:"combo10",name:"Combo 10 ⭐",emoji:"🔥",desc:"10 esfihas à sua escolha.",price:29.90},
+{id:"combo15",name:"Combo 15",emoji:"❤️",desc:"15 esfihas à sua escolha.",price:42.90},
+{id:"combo20",name:"Combo 20",emoji:"👨‍👩‍👧‍👦",desc:"20 esfihas à sua escolha.",price:54.90}
+];
+const extras=[{id:"molho",name:"Molho especial",emoji:"🥣",desc:"Molho da casa.",price:2},{id:"refri",name:"Refrigerante lata",emoji:"🥤",desc:"Consulte sabores disponíveis.",price:5.5}];
+const all=[...products,...combos,...extras],cart={};let payment="Pix";
+const money=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+function render(list,target){document.getElementById(target).innerHTML=list.map(p=>`<div class="card"><div class="emoji">${p.emoji}</div><h4>${p.name}</h4><div class="desc">${p.desc}</div><div class="price">${money(p.price)}</div><div class="qty"><button onclick="changeQty('${p.id}',-1)">−</button><strong id="q-${p.id}">0</strong><button onclick="changeQty('${p.id}',1)">+</button></div></div>`).join("")}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<0)cart[id]=0;document.getElementById("q-"+id).textContent=cart[id];update()}
+function update(){let subtotal=0,count=0,rows=[];all.forEach(p=>{let q=cart[p.id]||0;if(q){subtotal+=q*p.price;count+=q;rows.push(`<div class="row"><span>${q}x ${p.name}</span><strong>${money(q*p.price)}</strong></div>`)}});document.getElementById("summaryItems").innerHTML=rows.length?rows.join(""):`<div class="row"><span>Nenhum item adicionado</span><span>—</span></div>`;document.getElementById("subtotal").textContent=money(subtotal);document.getElementById("total").textContent=money(subtotal);document.getElementById("barTotal").textContent=money(subtotal);document.getElementById("count").textContent=count+" "+(count===1?"item":"itens")}
+document.querySelectorAll(".pay").forEach(b=>b.onclick=()=>{document.querySelectorAll(".pay").forEach(x=>x.classList.remove("active"));b.classList.add("active");payment=b.dataset.pay;document.getElementById("changeBox").classList.toggle("hidden",payment!=="Dinheiro")});
+function sendOrder(){let name=document.getElementById("name").value.trim(),phone=document.getElementById("phone").value.trim(),address=document.getElementById("address").value.trim(),reference=document.getElementById("reference").value.trim(),change=document.getElementById("change").value.trim(),notes=document.getElementById("notes").value.trim(),subtotal=0,items=[];all.forEach(p=>{let q=cart[p.id]||0;if(q){subtotal+=q*p.price;items.push(`${q}x ${p.name} — ${money(q*p.price)}`)}});if(!items.length)return alert("Adicione pelo menos um item ao pedido.");if(!name||!phone||!address)return alert("Preencha nome, WhatsApp e endereço.");let msg=`*NOVO PEDIDO — DU CHEF ESFIHARIA*\n\n*Cliente:* ${name}\n*WhatsApp:* ${phone}\n*Endereço:* ${address}`;if(reference)msg+=`\n*Referência:* ${reference}`;msg+=`\n\n*ITENS:*\n${items.join("\n")}\n\n*Subtotal:* ${money(subtotal)}\n*Taxa de entrega:* a confirmar\n*Total dos produtos:* ${money(subtotal)}\n*Pagamento:* ${payment}`;if(payment==="Dinheiro"&&change)msg+=`\n*Troco para:* R$ ${change}`;if(notes)msg+=`\n*Observação:* ${notes}`;msg+=`\n\n_Aguardo confirmação do pedido e da taxa de entrega._`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank")}
+render(products,"products");render(combos,"combos");render(extras,"extras");update();
+</script></body></html>
