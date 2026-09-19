@@ -1,0 +1,10 @@
+{
+  "name":"Du Chef Esfiharia",
+  "short_name":"Du Chef",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#0d0807",
+  "theme_color":"#160b08",
+  "description":"Cardápio online da Du Chef Esfiharia",
+  "icons":[{"src":"assets/logo-du-chef.png","sizes":"1536x1536","type":"image/png","purpose":"any maskable"}]
+}
